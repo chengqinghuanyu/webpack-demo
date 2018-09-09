@@ -1,0 +1,32 @@
+webpack 开发一个服务器需要那几部分？
+1、安装express
+2、安装webpack-dev-server,
+3、在webpack.config.js文件中配置
+devServer:{
+    contentBase:'./dist'
+}
+
+4、在webpack文件中配置start:'webpack-dev-server --open'
+
+5、新建server.js服务器文件
+const express = require('express')
+const webpack = require('webpack')
+const webpackDevMiddleware = require('webpack-dev-middleware')
+const app = express();
+const config = require('./webpack.config.js')
+const compiler = webpack(config);
+app.use(webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath
+}));
+app.listen(3000, function() {
+    console.log('express app listening on port 3000!\n')
+})
+
+
+6、设置webpack.config.js的输出文件有个公用的publicPath:'/'
+7、设置webpack配置文件中的script中的server启动
+"server":"node server.js"
+8、然后重启服务器 输入localhost:3000
+就可以使用了
+
+

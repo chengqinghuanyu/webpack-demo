@@ -1,0 +1,11 @@
+安装完毕webpack-dev-server后要配置
+webpack.config.js中的devServer:{contentBase:'./dist'}
+还需要在webpack配置文件中设置文件的启动项目
+"start":"webpack-dev-server --open"
+首先安装express\webpack-dev-middleware
+设置webpack.config.js文件中的输出文件追加
+公用输出文件
+publicPath:'/'
+
+
+

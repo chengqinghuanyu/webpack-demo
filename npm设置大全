@@ -1,0 +1,37 @@
+怎么使用webpack打包
+创建项目：
+进入项目
+初始化项目
+npm init -y  ====npm的初始化
+创建初始化的文件目录
+index.html src  index.js文件等
+
+在项目中根文件中运行webpack 而不是子文件中运行
+安装lodash文件 来更加方便使用处理js中数组对象字符串等的插件
+
+使用 npx webpack就可以运行
+并且生成了一个bundle文件
+
+
+使用webpack.config.js进行配置
+
+设置npx为npm的script运行
+之前是npx webpack --config webpack.config.js
+"build": "webpack"就等同于npm run build
+
+安装js文件中引入css模块的插件使用style-loader和css-loader 
+
+
+如何引入样式呢？
+
+在webpack.config.js配置文件中新加一个样式模块
+module:{
+    rules:[{
+        test:/\.css$/,
+        use:['stlye-loader','css-loader'],
+    }]//其中rules是个数组可以存很多个对象对象格式是test表示一个类型，use是什么插件用到
+}
+
+
+
+

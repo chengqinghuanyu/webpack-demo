@@ -1,0 +1,42 @@
+方式一、在webpack.config.js中使用热模块替换
+安装webpack-dev-server
+在webpack.config.js中添加配置项目
+   devServer: {
+     contentBase: './dist'
+   },
+1、在webpack.config.js引入使用webpack
+2、配置devServer:{
+    contentBase:'/dist',
+    hot:true
+}
+3、在插件数组中引入
+new webpack.namedModulePlugin(),
+new webpack.HotModuleReplacementPlugin()
+方式二、使用node+express+dev-server.js单独模块来配置
+新建dev-server.js文件将下面代码放在里面
+const webpackDevServer = require('webpack-dev-server');
+const webpack = require('webpack');
+
+const config = require('./webpack.config.js');
+const options = {
+  contentBase: './dist',
+  hot: true,
+  host: 'localhost'
+};
+
+webpackDevServer.addDevServerEntrypoints(config, options);
+const compiler = webpack(config);
+const server = new webpackDevServer(compiler, options);
+
+server.listen(5000, 'localhost', () => {
+  console.log('dev server listening on port 5000');
+});
+2、在webpack.config.js中引入webpack并在的插件项中配置
+new webpack.NamedModulesPlugin(),
+new webpack.HotModuleReplacementPlugin()
+两个插件
+3、需要安装express+webpack-dev-middleware
+在webpack.config.js中的输出文件中配置
+publicPath:'/'
+设置webpack配置文件中启动项为
+ "server": "node dev-server.js",

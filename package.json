@@ -1,0 +1,39 @@
+{
+    "name": "webpack-demo",
+    "sideEffects": [
+        "./src/index.js",
+        "./src/print.js",
+        "./src/math.js",
+        "*.css"
+    ],
+    "version": "1.0.0",
+    "description": "",
+    "private": true,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack",
+        "watch": "webpack --watch",
+        "start": "webpack-dev-server --open",
+        "server": "node dev-server.js"
+    },
+
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "clean-webpack-plugin": "^0.1.19",
+        "css-loader": "^1.0.0",
+        "express": "^4.16.3",
+        "file-loader": "^2.0.0",
+        "html-webpack-plugin": "^3.2.0",
+        "style-loader": "^0.23.0",
+        "webpack": "^4.17.2",
+        "webpack-cli": "^3.1.0",
+        "webpack-dev-middleware": "^3.2.0",
+        "webpack-dev-server": "^3.1.8"
+    },
+    "dependencies": {
+        "lodash": "^4.17.10",
+        "url-loader": "^1.1.1"
+    }
+}

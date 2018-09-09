@@ -1,0 +1,12 @@
+1、在webpack的配置文件中新增
+ "sideEffects": [
+    "./src/some-side-effectful-file.js"
+  ]
+  数组方式支持相关文件的相对路径、绝对路径和 glob 模式
+  "./src/some-side-effectful-file.js",
+    "*.css"
+
+    sideEffects
+
+在module中配置
+sideEffects
