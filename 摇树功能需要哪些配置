@@ -3,7 +3,7 @@
     "./src/some-side-effectful-file.js"
   ]
   数组方式支持相关文件的相对路径、绝对路径和 glob 模式
-  "./src/some-side-effectful-file.js",
+  "./src/some-side-effectful-file.js",  
     "*.css"
 
     sideEffects
